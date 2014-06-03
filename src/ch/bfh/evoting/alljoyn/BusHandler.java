@@ -313,7 +313,6 @@ public class BusHandler extends Handler {
 			@Override
 			public void foundAdvertisedName(String groupName, short transport) {
 				Intent i = new Intent("advertisedGroupChange");
-				Log.e("tag", "Sending BC");
 				LocalBroadcastManager.getInstance(context).sendBroadcast(i);
 			}
 
@@ -321,7 +320,6 @@ public class BusHandler extends Handler {
 			public void lostAdvertisedName(String groupName, short transport) {
 				Intent i = new Intent("advertisedGroupChange");
 				LocalBroadcastManager.getInstance(context).sendBroadcast(i);
-				Log.e("tag", "Sending BC");
 			}
 
 			@Override
