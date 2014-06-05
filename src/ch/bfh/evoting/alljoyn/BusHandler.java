@@ -406,6 +406,7 @@ public class BusHandler extends Handler {
 	 */
 	private Status doCreateGroup(String groupName, String groupPassword) {
 		connected = false;
+		this.identityMap.clear();
 		lastJoinedNetwork = null;
 		//If group already exists, connection will fail
 		//if multicast is not supported on the network, listFoundGroups
@@ -452,7 +453,7 @@ public class BusHandler extends Handler {
 	 * @return status of join
 	 */
 	private Status doJoinGroup(String groupName, String groupPassword, String saltShortDigest) {
-
+		this.identityMap.clear();
 		amIAdmin = false;
 		connected = false;
 		messageEncrypter.reset();
